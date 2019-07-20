@@ -64,4 +64,9 @@ exports.up = function(knex) {
     });
 };
 
-exports.down = function(knex) {};
+exports.down = function(knex) {
+    return knex.schema.dropTableIfExists("tasks").
+    dropTableIfExists("categories")
+    .dropTableIfExists("users")
+    .dropTableIfExists("time-units")
+};
